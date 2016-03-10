@@ -1,0 +1,19 @@
+{
+    "name": "finpin/sezame-sdk",
+    "type": "library",
+    "version": "0.0.1",
+    "description": "Passwordless multi-factor authentication",
+    "keywords": ["auth","authentication"],
+    "homepage": "https://seza.me/",
+    "license": "BSD",
+    "require": {
+        "php": ">=5.3.0",
+        "kriswallsmith/buzz": "0.*",
+        "endroid/qrcode": "1.5.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "SezameLib\\": "src/SezameLib"
+        }
+    }
+}
