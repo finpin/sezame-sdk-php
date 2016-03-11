@@ -2,7 +2,6 @@ Sezame PHP SDK
 =======
 
 [![Latest Stable Version](http://img.shields.io/packagist/v/finpin/sezame-sdk.svg)](https://packagist.org/packages/finpin/sezame-sdk)
-[![Build Status](http://img.shields.io/travis/finpin/sezame-sdk.svg)](http://travis-ci.org/finpin/sezame-sdk)
 [![Total Downloads](http://img.shields.io/packagist/dt/finpin/sezame-sdk.svg)](https://packagist.org/packages/finpin/sezame-sdk)
 [![License](http://img.shields.io/packagist/l/finpin/sezame-sdk.svg)](https://packagist.org/packages/finpin/sezame-sdk)
 
