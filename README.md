@@ -63,7 +63,7 @@ $client = new \SezameLib\Client();
 
 $privateKeyPassword = 'somethingsecret';
 
-$csrKey = $client->makeCsr($clientcode, 'example@example.com, $privateKeyPassword,
+$csrKey = $client->makeCsr($clientcode, 'example@example.com', $privateKeyPassword,
   Array(
     'countryName'            => 'AT',
     'stateOrProvinceName'    => 'Vienna',
