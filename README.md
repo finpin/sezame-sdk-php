@@ -125,7 +125,7 @@ file_put_contents('qrcode.html', sprintf('<img src="%s"/>', $qrCode->getDataUri(
 
 ### auth
 
-To authenticate users with Sezame, user the auth call.
+To authenticate users with Sezame, use the auth call.
 
 ```php
 
