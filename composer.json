@@ -1,11 +1,17 @@
 {
     "name": "finpin/sezame-sdk",
     "type": "library",
-    "version": "0.0.1",
     "description": "Passwordless multi-factor authentication",
     "keywords": ["auth","authentication"],
     "homepage": "https://seza.me/",
     "license": "BSD",
+    "authors": [
+        {
+            "name": "Finpin Technologies",
+            "email": "office@finpintech.com",
+            "homepage": "https://sezam.me/"
+        }
+    ],
     "require": {
         "php": ">=5.3.0",
         "kriswallsmith/buzz": "0.*",
