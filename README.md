@@ -74,6 +74,8 @@ $csrKey = $client->makeCsr($clientcode, 'example@example.com', $privateKeyPasswo
 
 $signRequest = $client->sign()->setCSR($csrKey->csr)->setSharedSecret($sharedsecret);
 
+$signResponse = $signRequest->send();
+
 $cert = $signResponse->getCertificate();
 
 printf("CSR:\n%s\n\n", $csrKey->csr);
