@@ -6,7 +6,7 @@ require BASE_PATH . '/vendor/autoload.php';
 
 $client = new \SezameLib\Client();
 
-$registerRequest = $client->register()->setEmail('reg@bretterklieber.com')->setName('xtest remove');
+$registerRequest = $client->register()->setEmail('<your email>')->setName('xtest remove');
 
 try {
 

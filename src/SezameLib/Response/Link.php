@@ -2,6 +2,8 @@
 
 namespace SezameLib\Response;
 
+use Endroid\QrCode\ErrorCorrectionLevel;
+
 class Link extends Generic
 {
     public function isDuplicate()
@@ -41,8 +43,13 @@ class Link extends Generic
         $qrCode
             ->setText($qrCodeData)
             ->setSize(300)
-            ->setPadding(10)
-            ->setErrorCorrection('high')
+            ->setLabelMargin([
+                't' => 10,
+                'r' => 10,
+                'b' => 10,
+                'l' => 10,
+            ])
+            ->setErrorCorrectionLevel(ErrorCorrectionLevel::HIGH)
             ->setForegroundColor(array('r' => 0, 'g' => 0, 'b' => 0, 'a' => 0))
             ->setBackgroundColor(array('r' => 255, 'g' => 255, 'b' => 255, 'a' => 0));
 

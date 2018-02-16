@@ -4,7 +4,7 @@
     "description": "Passwordless multi-factor authentication",
     "keywords": ["auth","authentication"],
     "homepage": "https://seza.me/",
-    "license": "BSD",
+    "license": "BSD-3-Clause",
     "authors": [
         {
             "name": "Finpin Technologies",
@@ -15,7 +15,7 @@
     "require": {
         "php": ">=5.3.0",
         "kriswallsmith/buzz": "0.*",
-        "endroid/qrcode": "1.5.*"
+        "endroid/qrcode": "2.0.*"
     },
     "autoload": {
         "psr-4": {

@@ -6,11 +6,16 @@ require BASE_PATH . '/vendor/autoload.php';
 
 $certfile = __DIR__ . '/cert/test-cert.pem';
 $keyfile = __DIR__ . '/cert/test-key.pem';
+
+$certfile = __DIR__ . '/cert/cert.pem';
+$keyfile = __DIR__ . '/cert/key.pem';
+
+
 $timeout = 20;
 
 $client = new \SezameLib\Client($certfile, $keyfile);
 
-$authRequest = $client->authorize()->setUsername('foo-client-user');
+$authRequest = $client->authorize()->setUsername('johndoe');
 
 try {
 

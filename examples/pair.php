@@ -7,9 +7,13 @@ require BASE_PATH . '/vendor/autoload.php';
 $certfile = __DIR__ . '/cert/test-cert.pem';
 $keyfile = __DIR__ . '/cert/test-key.pem';
 
+$certfile = __DIR__ . '/cert/cert.pem';
+$keyfile = __DIR__ . '/cert/key.pem';
+
+
 $client = new \SezameLib\Client($certfile, $keyfile);
 
-$username = 'foo-client-user';
+$username = 'johndoe';
 
 try {
 
@@ -34,11 +38,19 @@ try {
     }
 
     $qrCode = $linkResponse->getQrCode($username);
-    $qrCode->setSize(300)->setPadding(10); // optionally adjust qrcode dimensions
+    $qrCode->setSize(300)->setLabelMargin([
+        't' => 10,
+        'r' => 10,
+        'b' => 10,
+        'l' => 10,
+    ]); // optionally adjust qrcode dimensions
 
-    printf('<img src="%s"/>', $qrCode->getDataUri());
+    printf('<img src="%s"/>', $qrCode->writeString(\Endroid\QrCode\Writer\PngDataUriWriter::class));
 
-    file_put_contents('qrcode.html', sprintf('<img src="%s"/>', $qrCode->getDataUri()));
+
+    file_put_contents('qrcode.html', sprintf('<img src="%s"/>', $qrCode->writeString(\Endroid\QrCode\Writer\PngDataUriWriter::class)));
+
+    file_put_contents('qrcode.eps', $qrCode->writeString(\Endroid\QrCode\Writer\EpsWriter::class));
 
 } catch (\SezameLib\Exception\Connection $e) {
     // connection to hq failed
