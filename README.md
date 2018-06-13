@@ -95,6 +95,8 @@ with your application, this is done by displaying a QR code which is read by the
 
 ```php
 
+use Endroid\QrCode\Writer;
+
 $client = new \SezameLib\Client($certfile, $keyfile);
 
 $username = 'foo-client-user';
@@ -117,11 +119,16 @@ if ($linkResponse->isDuplicate()) {
 }
 
 $qrCode = $linkResponse->getQrCode($username);
-$qrCode->setSize(300)->setPadding(10); // optionally adjust qrcode dimensions
+$qrCode->setSize(300)->setLabelMargin([
+        't' => 10,
+        'r' => 10,
+        'b' => 10,
+        'l' => 10,
+]); // optionally adjust qrcode dimensions
 
-printf('<img src="%s"/>', $qrCode->getDataUri());
+printf('<img src="%s"/>', $qrCode->writeString(Writer\PngDataUriWriter::class));
 
-file_put_contents('qrcode.html', sprintf('<img src="%s"/>', $qrCode->getDataUri()));
+file_put_contents('qrcode.html', sprintf('<img src="%s"/>', $qrCode->writeString(Writer\PngDataUriWriter::class)));
 
 ```
 
